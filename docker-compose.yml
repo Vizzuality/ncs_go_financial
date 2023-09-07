@@ -1,0 +1,13 @@
+version: "3.8"
+services:
+  ncs_go_financial-notebooks:
+    build:
+      context: .
+    volumes:
+      - ./data:/home/mambauser/data
+      - ./notebooks:/home/mambauser/notebooks
+      - ./src:/home/mambauser/src
+    ports:
+      - 8887:8888
+    container_name: ncs_go_financial_notebooks
+    env_file: .env
